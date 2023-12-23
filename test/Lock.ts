@@ -4,7 +4,7 @@ import {
 } from "@nomicfoundation/hardhat-toolbox/network-helpers";
 import { anyValue } from "@nomicfoundation/hardhat-chai-matchers/withArgs";
 import { expect } from "chai";
-import { ethers } from "hardhat";
+import { ethers, upgrades } from "hardhat";
 
 describe("Lock", function () {
   // We define a fixture to reuse the same setup in every test.
@@ -21,7 +21,10 @@ describe("Lock", function () {
     const [owner, otherAccount] = await ethers.getSigners();
 
     const Lock = await ethers.getContractFactory("Lock");
-    const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
+    const lock = await upgrades.deployProxy(Lock, [
+      unlockTime,
+      { value: lockedAmount },
+    ]);
 
     return { lock, unlockTime, lockedAmount, owner, otherAccount };
   }

@@ -34,4 +34,8 @@ contract Lock is Initializable {
 
     vault.owner.transfer(address(this).balance);
   }
+
+  function getVault(uint idx) external view returns (Vault memory) {
+    return vaults[idx];
+  }
 }
