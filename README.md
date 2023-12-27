@@ -1,5 +1,6 @@
 # Ayaversity-pace
 
-week-5 Multi-sig
+## ERC721 smart contract
 
-week-6 Upgradeability-transparent & diamond pattern
+deployed a non-fungible token on sepolia testnet at 0x065091245b3a0eb5e5578e3072076b3df9887d13
+[opensea](https://testnets.opensea.io/collection/aya-3)
