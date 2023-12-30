@@ -1,4 +1,5 @@
 import { ethers, upgrades } from "hardhat";
+import { Lock } from "../typechain-types";
 
 async function main() {
   const currentTimestampInSeconds = Math.round(Date.now() / 1000);
